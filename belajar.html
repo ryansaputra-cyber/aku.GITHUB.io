@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UMKM Modern</title>
+
+<style>
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background:linear-gradient(135deg,#f0f4ff,#ffffff);
+  color:#222;
+}
+
+/* HEADER & HERO */
+
+header{
+  position:relative;
+  background:radial-gradient(circle at top left,#4f46e5,#1f2937);
+  color:white;
+  padding:20px 20px 60px;
+  box-shadow:0 10px 30px rgba(15,23,42,0.6);
+  border-bottom-left-radius:24px;
+  border-bottom-right-radius:24px;
+  overflow:hidden;
+}
+
+header::before{
+  content:"";
+  position:absolute;
+  width:320px;
+  height:320px;
+  background:radial-gradient(circle,#6366f1,transparent 60%);
+  top:-120px;
+  right:-80px;
+  opacity:0.6;
+}
+
+header::after{
+  content:"";
+  position:absolute;
+  width:220px;
+  height:220px;
+  background:radial-gradient(circle,#22c55e,transparent 60%);
+  bottom:-80px;
+  left:-60px;
+  opacity:0.5;
+}
+
+.header-inner{
+  position:relative;
+  max-width:1100px;
+  margin:0 auto;
+  z-index:1;
+}
+
+/* NAVBAR */
+
+.nav-bar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+
+.logo{
+  font-weight:800;
+  font-size:22px;
+  letter-spacing:2px;
+}
+
+.nav-links a{
+  position:relative;
+  color:white;
+  margin:0 6px;
+  text-decoration:none;
+  padding:8px 14px;
+  overflow:hidden;
+  border-radius:20px;
+  font-weight:500;
+  font-size:14px;
+  transition:background .25s, transform .2s, box-shadow .2s;
+}
+
+.nav-links a:hover{
+  background:rgba(255,255,255,0.15);
+  transform:translateY(-1px);
+  box-shadow:0 2px 6px rgba(15,23,42,0.4);
+}
+
+/* HERO CONTENT */
+
+.hero{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  margin-top:40px;
+  gap:30px;
+}
+
+.hero-text{
+  flex:1 1 260px;
+  max-width:540px;
+}
+
+.hero-text h1{
+  margin:0;
+  font-size:34px;
+  line-height:1.2;
+}
+
+.hero-text p{
+  margin-top:12px;
+  margin-bottom:20px;
+  font-size:16px;
+  color:rgba(249,250,251,0.9);
+}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-bottom:16px;
+}
+
+.btn-primary,
+.btn-secondary{
+  display:inline-block;
+  padding:11px 22px;
+  border-radius:999px;
+  font-weight:600;
+  font-size:14px;
+  text-decoration:none;
+  cursor:pointer;
+  border:1px solid transparent;
+  transition:background .25s, color .25s, transform .2s, box-shadow .2s;
+}
+
+.btn-primary{
+  background:#22c55e;
+  color:#0f172a;
+  box-shadow:0 8px 18px rgba(34,197,94,0.55);
+}
+
+.btn-primary:hover{
+  background:#16a34a;
+  transform:translateY(-1px);
+  box-shadow:0 12px 24px rgba(34,197,94,0.7);
+}
+
+.btn-secondary{
+  background:rgba(15,23,42,0.2);
+  color:white;
+  border-color:rgba(148,163,184,0.5);
+}
+
+.btn-secondary:hover{
+  background:rgba(15,23,42,0.45);
+  transform:translateY(-1px);
+  box-shadow:0 8px 18px rgba(15,23,42,0.6);
+}
+
+.hero-badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  font-size:12px;
+  color:#e5e7eb;
+}
+
+.hero-badges span{
+  padding:6px 10px;
+  border-radius:999px;
+  background:rgba(15,23,42,0.5);
+  border:1px solid rgba(148,163,184,0.5);
+}
+
+.hero-visual{
+  flex:1 1 240px;
+  display:flex;
+  justify-content:flex-end;
+}
+
+.hero-card{
+  position:relative;
+  background:rgba(15,23,42,0.85);
+  border-radius:18px;
+  padding:18px 18px 20px;
+  min-width:240px;
+  max-width:280px;
+  box-shadow:0 16px 32px rgba(15,23,42,0.85);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(148,163,184,0.6);
+}
+
+.hero-card img{
+  width:100%;
+  border-radius:12px;
+  margin-bottom:10px;
+}
+
+.hero-label{
+  display:inline-block;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  color:#bbf7d0;
+  margin-bottom:6px;
+}
+
+.hero-card p{
+  margin:0;
+  font-size:13px;
+  color:#e5e7eb;
+}
+
+.hero-price{
+  margin-top:8px;
+  font-weight:700;
+  color:#22c55e;
+}
+
+/* MAIN SECTIONS */
+
+section{
+  padding:40px 20px;
+  max-width:1000px;
+  margin:auto;
+}
+
+section h2{
+  text-align:center;
+  margin-top:0;
+  margin-bottom:24px;
+  letter-spacing:1px;
+}
+
+/* PRODUCTS */
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.card{
+  position:relative;
+  background:white;
+  padding:20px;
+  border-radius:16px;
+  box-shadow:0 8px 16px rgba(15,23,42,0.06);
+  text-align:center;
+  overflow:hidden;
+  cursor:pointer;
+  transition:transform .18s ease-out, box-shadow .18s ease-out;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 14px 28px rgba(15,23,42,0.12);
+}
+
+.card img{
+  width:100%;
+  border-radius:10px;
+}
+
+/* ORDER FORM */
+
+#order{
+  background:white;
+  padding:30px;
+  border-radius:16px;
+  box-shadow:0 10px 22px rgba(15,23,42,0.08);
+}
+
+#order input,
+#order select,
+#order button{
+  width:100%;
+  padding:12px;
+  margin:8px 0;
+  font-size:16px;
+  border-radius:8px;
+  border:1px solid #d1d5db;
+}
+
+#order input:focus,
+#order select:focus{
+  outline:none;
+  border-color:#4f46e5;
+  box-shadow:0 0 0 2px rgba(79,70,229,0.25);
+}
+
+#order button{
+  position:relative;
+  background:#22c55e;
+  color:white;
+  border:none;
+  cursor:pointer;
+  font-weight:bold;
+  overflow:hidden;
+  transition:background .25s, transform .18s, box-shadow .18s;
+}
+
+#order button:hover{
+  background:#16a34a;
+  transform:translateY(-2px);
+  box-shadow:0 10px 20px rgba(34,197,94,0.6);
+}
+
+/* FOOTER */
+
+footer{
+  background:#0f172a;
+  color:#e5e7eb;
+  text-align:center;
+  padding:15px;
+  margin-top:40px;
+  font-size:13px;
+}
+
+/* RIPPLE EFFECT */
+
+.ripple{
+  position:absolute;
+  border-radius:50%;
+  transform:scale(0);
+  animation:ripple 600ms linear;
+  background:rgba(255,255,255,0.6);
+}
+
+@keyframes ripple{
+  to{
+    transform:scale(4);
+    opacity:0;
+  }
+}
+
+/* RESPONSIVE */
+
+@media (max-width:768px){
+  header{
+    padding-bottom:40px;
+  }
+  .hero{
+    margin-top:30px;
+  }
+  .hero-text h1{
+    font-size:26px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="nav-bar">
+      <div class="logo">UMKM KITA</div>
+      <div class="nav-links">
+        <a href="#produk" class="ripple-btn">Produk</a>
+        <a href="#order" class="ripple-btn">Order</a>
+        <a href="#kontak" class="ripple-btn">Kontak</a>
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <h1>Produk Lokal, Kualitas Profesional</h1>
+        <p>Temukan pilihan produk UMKM yang dikurasi dengan kualitas terbaik
+        dan harga yang tetap bersahabat untuk kebutuhan harian maupun bisnis Anda.</p>
+
+        <div class="hero-actions">
+          <a href="#produk" class="btn-primary ripple-btn">Lihat Produk</a>
+          <a href="#order" class="btn-secondary ripple-btn">Pesan Sekarang</a>
+        </div>
+
+        <div class="hero-badges">
+          <span>100% Produk Lokal</span>
+          <span>Siap Kirim Hari Ini</span>
+          <span>Bayar via Transfer / COD</span>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-card">
+          <span class="hero-label">Best Seller</span>
+          <img src="https://picsum.photos/320/210?food" alt="Produk unggulan">
+          <p>Paket Hampers UMKM pilihan, cocok untuk hadiah dan corporate gift.</p>
+          <div class="hero-price">Mulai Rp150.000</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="produk">
+  <h2>Produk Kami</h2>
+
+  <div class="products">
+    <div class="card ripple-btn">
+      <img src="https://picsum.photos/300/200?1" alt="Produk A">
+      <h3>Produk A</h3>
+      <p>Rp50.000</p>
+    </div>
+
+    <div class="card ripple-btn">
+      <img src="https://picsum.photos/300/200?2" alt="Produk B">
+      <h3>Produk B</h3>
+      <p>Rp75.000</p>
+    </div>
+
+    <div class="card ripple-btn">
+      <img src="https://picsum.photos/300/200?3" alt="Produk C">
+      <h3>Produk C</h3>
+      <p>Rp100.000</p>
+    </div>
+
+    <div class="card ripple-btn">
+      <img src="https://picsum.photos/300/200?4" alt="Produk D">
+      <h3>Produk D</h3>
+      <p>Rp125.000</p>
+    </div>
+
+    <div class="card ripple-btn">
+      <img src="https://picsum.photos/300/200?5" alt="Produk E">
+      <h3>Produk E</h3>
+      <p>Rp150.000</p>
+    </div>
+  </div>
+</section>
+
+<section id="order">
+  <h2>Form Pemesanan</h2>
+
+  <input id="nama" placeholder="Nama Anda">
+  <select id="produk-select">
+    <option value="Produk A - Rp50.000">Produk A - Rp50.000</option>
+    <option value="Produk B - Rp75.000">Produk B - Rp75.000</option>
+    <option value="Produk C - Rp100.000">Produk C - Rp100.000</option>
+    <option value="Produk D - Rp125.000">Produk D - Rp125.000</option>
+    <option value="Produk E - Rp150.000">Produk E - Rp150.000</option>
+  </select>
+  <input id="jumlah" type="number" placeholder="Jumlah" min="1">
+  <button onclick="kirimWA()" class="ripple-btn">Pesan via WhatsApp</button>
+</section>
+
+<section id="kontak">
+  <h2>Kontak Kami</h2>
+  <p>Alamat UMKM Anda</p>
+  <p>WhatsApp: 08xxxxxxxxxx</p>
+</section>
+
+<footer>
+  © 2026 UMKM Kita
+</footer>
+
+<script>
+function kirimWA(){
+  var nama = document.getElementById("nama").value;
+  var produk = document.getElementById("produk-select").value;
+  var jumlah = document.getElementById("jumlah").value;
+
+  if(!nama || !jumlah){
+    alert("Lengkapi data!");
+    return;
+  }
+
+  var pesan = "Halo admin UMKM KITA,%0A" +
+              "Saya " + nama + " ingin memesan:%0A" +
+              "Produk: " + produk + "%0A" +
+              "Jumlah: " + jumlah + "%0A%0A" +
+              "Terima kasih.";
+
+  var noWA = "628xxxxxxxxxx"; // ganti dengan nomor WA
+  var url = "https://wa.me/" + noWA + "?text=" + pesan;
+  window.open(url,"_blank");
+}
+
+document.querySelectorAll(".ripple-btn").forEach(function(btn){
+  btn.addEventListener("click",function(e){
+    var circle = document.createElement("span");
+    var diameter = Math.max(this.clientWidth,this.clientHeight);
+    var radius = diameter / 2;
+
+    circle.style.width = circle.style.height = diameter + "px";
+    circle.style.left = (e.clientX - this.offsetLeft - radius) + "px";
+    circle.style.top = (e.clientY - this.offsetTop - radius) + "px";
+    circle.classList.add("ripple");
+
+    var ripple = this.getElementsByClassName("ripple")[0];
+    if(ripple){
+      ripple.remove();
+    }
+
+    this.appendChild(circle);
+  });
+});
+</script>
+
+</body>
+</html>
